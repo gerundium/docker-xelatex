@@ -1,0 +1,17 @@
+# variables
+
+# default slug
+.PHONY: default
+
+# functions
+default:
+	@echo "[Info]:"
+	@echo "|-> make build"
+	@echo "|-> make push"
+
+build:
+	@docker build -t gerundium/xelatex .
+# Manual step	@docker tag gerundium/xelatex:latest gerundium/xelatex:1.0.0
+
+push:
+	@docker push gerundium/xelatex:latest
